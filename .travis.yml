@@ -5,4 +5,4 @@ services:
 env:
 
 script:
-  - ls -lah
+  - ./wget_latest.sh
