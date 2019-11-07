@@ -25,3 +25,5 @@ while read -r line; do
     #tar ztvf k8sCapcity_Linux_x86_64.tar.gz --exclude={LICENSE,README*}
 
 done < <(grep -E 'git|http' .meta  | awk -F': "' '{print $2}' | sed 's/".*$//')
+
+exit 0
