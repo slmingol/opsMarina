@@ -4,11 +4,13 @@ services:
 - docker
 env:
   global:
-    secure: Tao9WkbIzUkUs5f/Ra89np2CZYgnnGxz50xolxLn2zs0n5+vrqfwac9aKONyxZgfsdzrDdDKzAPMQ7nKh53I+YmNkAEdX5vASC/Ol3uPdEoM5kqkAV5eatbu8QYngmRaV9SOmGKAZmjGL9KEunKwJh6IOQdJnyndrrl5UphnF9CZcIJ2VzoCzBdwU0mj0zPJutW8tdbumEN37eR4PQYMjZXimcH3W8dD5s9Y0lXvH/Rqnn1uCd4hfcjd9cP9Bqs0YdN0YlarLfEtlh3VWtGN3ZRmaHAgyhZ6iOod4hSP07tNBuQ1HsoXZHQ6tRn3kLMtH2bwUhmgCD2cIvoLQNGH+YkSMZ99QfapeUs+ADfESoo2ETW9RXT1tEZz0HkuLJa48XHMbunyNrE9qnkewl277Nw9Yr8KiVpLJEl+5uJ8WQbJ/0unNTGEqDfiOP81kR4ezRtCQLLw49Ld35geIWHTWb+JEV0kI0T2aixqFAMJuOiF8v8ZvcDdR25mutEbJD2CTnwqttE01X2fuKaJCP0LUMeP+LCBB2W+39zwJET924q5O2ijJmdEjk4XcTzCKQ/kvMbyHNeY8NYt0RrOO3ITB71F2w9B2xJ5AFGoqNC4V0nxUQkyeLTlub//AcZbfoKI7rrCoaU0Zvt5qVNvmRAIzqPxAd0nMHqj8RN328eGOso=
+    secure: $GITHUB_TOKEN
 script:
 - "./wget_latest.sh"
 deploy:
   provider: releases
-  file: artifacts/bundles/opsMarina_Darwin_x86_64.tar.gz
+  file:
+    - artifacts/bundles/opsMarina_Darwin_x86_64.tar.gz
+    - artifacts/bundles/opsMarina_Linux_x86_64.tar.gz
   on:
     repo: slmingol/opsMarina
