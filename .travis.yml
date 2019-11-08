@@ -1,8 +1,14 @@
+language: minimal
 sudo: required
 services:
-  - docker
-
-env:
-
+- docker
+env: 
 script:
-  - ./wget_latest.sh
+- "./wget_latest.sh"
+deploy:
+  provider: releases
+  api_key:
+    secure: siq1mvJ0aE2QrhL6ILXHmDOnyoFGmn4Eg09X7roWCNlOcr/peg0BY1attasTM8mK1adzgNJFJ6b6U/DcNubNNM+MjtxU8mY8zpDy/IZPvrKYoLspxiMz+JuwgGhPx1WQV3TcGx7m5WMcK8/+wkkrQxOqFGsaLqgvEAALlH5vNKWs4tDYsH4EBm85jxTMUi+2Is00ONNTCWSefGQ9WseJWrYiv2VLOff/SLBykF8ailJ8sq9H3jA8JcHJnFMVWjJRCz4O/TsrirOB/nAaHkHVg3gRsP6rYarnHOLyDf7Tqa4ogcZ7WAx1WdrAIg2qQ8plvtmDpp3/DzaC6Ijn8qbOXtL8NKYRCkxljCw4QcbdTFh+wNMR24TR0yUQsv4Ucb3jpMVpOtXLgZdiKrTGtt8whR+rj8+W4ELKaM49j1fM1U1scIdqTu9ipN2TzBbCZ/Zf6GNxtPjXGKcH4VibQ8eRZGNmSg1xQIOxT7upycELDExXQdQYg+aQ7+1SHyhS2M60FRx1B7dvqpselMRtAUsLqCe3t3WEYPCp+/MvsuE2NhAYcyc1+RhU74k+Gg2Xnz2a//7zzb92zD0e3nr9ek0BT9dnbXpQBVb7l2QPFuhYHIxFU4Xw3PiSji3yuG84NTgcOt+y0mF/hNMqma6hae/sZCtxMAZ1L3dHAPg1ZyZz9sw=
+  file: artifacts/bundles/opsMarina_Darwin_x86_64.tar.gz
+  on:
+    repo: slmingol/opsMarina
