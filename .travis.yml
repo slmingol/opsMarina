@@ -13,4 +13,4 @@ deploy:
     - artifacts/bundles/opsMarina_Linux_x86_64.tar.gz
   skip_cleanup: true
   on:
-    repo: slmingol/opsMarina
+    tags: true
