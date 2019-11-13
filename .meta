@@ -1,7 +1,6 @@
 {
   "projects": {
     "k8s/k8sKapcity": "https://github.com/Jmainguy/k8sCapcity",
-    "k8s/k8sKillAllPodsOnSingleNode": "https://github.com/Jmainguy/k8sKillAllPodsOnSingleNode",
     "k8s/k8sDrainReport": "https://github.com/Jmainguy/k8sDrainReport",
     "k8s/k8sNodeIssues": "https://github.com/Jmainguy/k8sNodeIssues",
     "es/escli": "https://github.com/slmingol/escli"
