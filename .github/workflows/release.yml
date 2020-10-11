@@ -6,7 +6,7 @@ on:
 name: release
 jobs:
     release:
-        name: run gorleaser
+        name: Create release
         runs-on: ubuntu-latest
         steps:
           - name: git checkout
