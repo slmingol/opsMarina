@@ -1,0 +1,25 @@
+on:
+  push:
+    tags:
+      - '*'
+
+name: release
+jobs:
+    release:
+        name: run gorleaser
+        runs-on: ubuntu-latest
+        steps:
+          - name: git checkout
+            uses: actions/checkout@v2.3.2
+
+          - name: Generate artifacts
+            run: ./wget_latest.sh
+
+          - name: Upload binaries to release
+            uses: svenstaro/upload-release-action@v2
+            with:
+                repo_token: ${{ secrets.GITHUB_TOKEN }}
+                file: artifacts/bundles/*.tar.gz
+                tag: ${{ github.ref }}
+                overwrite: true
+                file_glob: true
